@@ -2,6 +2,15 @@
 <project name="PHP_Project" default="build">
  <target name="build" depends="prepare,phpcs-ci"/>
 
+ <target name="build-parallel"
+   depends="prepare,lint,tools-parallel"/>
+
+ <target name="tools-parallel" description="Run tools in parallel">
+  <parallel threadCount="2">
+   <antcall target="phpcs-ci"/>
+  </parallel>
+ </target>
+
  <target name="clean" description="Cleanup build artifacts">
   <delete dir="${basedir}/build/logs"/>
  </target>
