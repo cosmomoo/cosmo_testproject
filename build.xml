@@ -3,10 +3,12 @@
  <target name="build" depends="prepare,phpcs-ci"/>
 
  <target name="clean" description="Cleanup build artifacts">
+  <delete dir="${basedir}/build"/>
   <delete dir="${basedir}/build/logs"/>
  </target>
 
  <target name="prepare" depends="clean" description="Prepare for build">
+  <mkdir dir="${basedir}/build/"/>
   <mkdir dir="${basedir}/build/logs"/>
  </target>
 
