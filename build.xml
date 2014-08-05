@@ -21,12 +21,13 @@
    </apply>
   </target>
 
-  <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format">
-   <exec executable="phpcs">
-    <arg value="--report=checkstyle" />
-    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-    <arg value="--standard=PSR2" />
-    <arg path="${basedir}/applications" />
-   </exec>
-  </target>
+ <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
+  <exec executable="phpcs" output="/dev/null">
+   <arg value="--report=checkstyle" />
+   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+   <arg value="--standard=PSR2" />
+   <arg path="${basedir}//applications" />
+  </exec>
+ </target>
+
 </project>
