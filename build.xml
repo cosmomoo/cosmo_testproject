@@ -3,12 +3,10 @@
  <target name="build" depends="prepare,phpcs-ci"/>
 
  <target name="clean" description="Cleanup build artifacts">
-  <delete dir="${basedir}/build"/>
   <delete dir="${basedir}/build/logs"/>
  </target>
 
  <target name="prepare" depends="clean" description="Prepare for build">
-  <mkdir dir="${basedir}/build"/>
   <mkdir dir="${basedir}/build/logs"/>
  </target>
 
@@ -24,7 +22,7 @@
   </target>
 
   <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format">
-   <exec executable="/home/cosmo/PHP_tools/vendor/bin/phpcs" output="/dev/null">
+   <exec executable="${basedir}/build/tools/phpcs.phar" output="/dev/null">
     <arg value="--report=checkstyle" />
     <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
     <arg value="--standard=PSR2" />
