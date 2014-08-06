@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="PHP_Project" default="build">
- <target name="build" depends="prepare,phpcs-ci,phpdox"/>
+ <target name="build" depends="prepare,lint"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel"/>
