@@ -4,7 +4,11 @@
    <include mask="*.php" />
   </collector>
 
-  <generator output="../build">
+  <generator output=".">
+   <enrich base="logs">
+    <source type="checkstyle" />
+   </enrich>
+
    <build engine="html" enabled="true" output="api">
     <file extension="html" />
    </build>
