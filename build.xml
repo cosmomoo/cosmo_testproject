@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="PHP_Project" default="build">
- <target name="build" depends="prepare,lint"/>
+ <target name="build" depends="prepare,lint,php-ci,phpdox,phploc"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel"/>
@@ -30,6 +30,15 @@
     </fileset>
    </apply>
   </target>
+
+ <target name="phploc" description="Measure project size using PHPLOC">
+  <exec executable="phploc">
+   <arg value="--count-tests" />
+   <arg value="--log-csv" />
+   <arg value="${basedir}/build/logs/phploc.csv" />
+   <arg path="${basedir}/src" />
+  </exec>
+ </target>
 
  <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
   <exec executable="phpcs" output="/dev/null">
