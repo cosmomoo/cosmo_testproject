@@ -8,8 +8,9 @@
   <generator output=".">
    <enrich base="logs">
     <source type="build" />
-    <source type="checkstyle" />
+    <source type="git" />
     <source type="phploc" />
+    <source type="checkstyle" />
    </enrich>
 
    <build engine="html" enabled="true" output="api">
