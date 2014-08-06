@@ -41,6 +41,6 @@
  </target>
 
  <target name="phpdox" description="Generate API documentation using phpDox">
-  <exec executable="phpdox"/>
+  <exec executable="phpdox" dir="${basedir}/build"/>
  </target>
 </project>
