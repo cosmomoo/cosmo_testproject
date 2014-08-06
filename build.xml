@@ -9,6 +9,7 @@
   <parallel threadCount="2">
    <antcall target="phpcs-ci"/>
    <antcall target="phpdox"/>
+   <antcall target="phploc"/>
   </parallel>
  </target>
 
