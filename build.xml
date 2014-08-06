@@ -36,6 +36,8 @@
    <arg value="--count-tests" />
    <arg value="--log-csv" />
    <arg value="${basedir}/build/logs/phploc.csv" />
+   <arg value="--log-xml" />
+   <arg path="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/applications" />
   </exec>
  </target>
